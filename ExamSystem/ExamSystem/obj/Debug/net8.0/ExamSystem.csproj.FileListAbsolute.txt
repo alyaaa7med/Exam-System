@@ -1,0 +1,5 @@
+D:\ITI 3 months\c#_advanced\Exam-System\ExamSystem\ExamSystem\obj\Debug\net8.0\ExamSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI 3 months\c#_advanced\Exam-System\ExamSystem\ExamSystem\obj\Debug\net8.0\ExamSystem.AssemblyInfoInputs.cache
+D:\ITI 3 months\c#_advanced\Exam-System\ExamSystem\ExamSystem\obj\Debug\net8.0\ExamSystem.AssemblyInfo.cs
+D:\ITI 3 months\c#_advanced\Exam-System\ExamSystem\ExamSystem\obj\Debug\net8.0\ExamSystem.csproj.CoreCompileInputs.cache
+D:\ITI 3 months\c#_advanced\Exam-System\ExamSystem\ExamSystem\obj\Debug\net8.0\ExamSystem.sourcelink.json
