@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    public class Subject :IComparable<Subject>
+    public class Subject :IComparable<Subject> , ICloneable<Subject>
     {
         string nm;
         //List<Student> students;
@@ -24,6 +24,10 @@ namespace ExamSystem
             if (other == null) return 1;
             return NM.CompareTo(Subject.NM) ;
 
+        }
+        public Subject Clone()
+        {
+            return (Subject)this.MemberwiseClone();
         }
 
     }

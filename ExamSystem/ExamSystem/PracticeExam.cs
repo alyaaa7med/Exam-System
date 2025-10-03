@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ExamSystem
 {
 
-    internal class PracitceExam : Exam, IComparable<PracitceExam>
+    internal class PracitceExam : Exam, IComparable<PracitceExam> , ICloneable<PracitceExam>
     {
         DateTime examStart, examEnd;
         int durationMinutes = 50;
@@ -49,6 +49,10 @@ namespace ExamSystem
             if (other == null) return 1;
             return examStart.CompareTo(other.examStart) ;
 
+        }
+        public PracitceExam Clone()
+        {
+            return (PracitceExam)this.MemberwiseClone();
         }
         public void AddQuesToExam(Question q, AnswerList al)
         {

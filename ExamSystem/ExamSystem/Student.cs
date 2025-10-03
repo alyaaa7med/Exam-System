@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class Student: IComparable <Student>
+    internal class Student: IComparable <Student> , ICloneable<Student>
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -35,6 +35,10 @@ namespace ExamSystem
             if (other == null) return 1;
             return Id.CompareTo(other.Id) && Name.CompareTo(other.Name);
 
+        }
+        public Student Clone()
+        {
+            return (Student)this.MemberwiseClone();
         }
         private void OnExamStateChanged(object? sender, ExamEventArgs e)
         {

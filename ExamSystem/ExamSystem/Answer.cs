@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class Answer : IComparable<Answer>
+    internal class Answer : IComparable<Answer>,ICloneable<Answer>
     {
         public string val { get; set; }//true //false //abstraction 
 
@@ -16,6 +16,10 @@ namespace ExamSystem
             if (other == null) return 1;
             return val.CompareTo(other.val) ;
 
+        }
+        public Answer Clone()
+        {
+            return (Answer)this.MemberwiseClone()
         }
     }
 }

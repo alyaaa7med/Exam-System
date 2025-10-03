@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class ChooseOneQues : Question, IComparable<ChooseOneQues>
+    internal class ChooseOneQues : Question, IComparable<ChooseOneQues>,ICloneable<ChooseOneQues>
     {
         //e.g: OOP , which key word is used to stop overriden.  (2marks)
         //     virtual - new - override - callback 
@@ -39,6 +39,13 @@ namespace ExamSystem
             if (other == null) return 1;
             return header.CompareTo(other.header) && body.CompareTo(other.body);
 
+        }
+        public ChooseOneQues Clone()
+        {
+            return (ChooseOneQues)this.MemberwiseClone();
+        }
+        {
+            return (ChooseOneQues)this.MemberwiseClone(); // shallow copy
         }
         public override string ToString()
         {

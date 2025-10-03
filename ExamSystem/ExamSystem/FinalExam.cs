@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class FinalExam : Exam , IComparable<FinalExam>
+    internal class FinalExam : Exam , IComparable<FinalExam>,ICloneable<FinalExam>
     {
         DateTime examStart, examEnd;
         int durationMinutes = 150;
@@ -46,6 +46,11 @@ namespace ExamSystem
             return examStart.CompareTo(other.examStart);
 
         }
+        public FinalExam Clone()
+        {
+            return (FinalExam)this.MemberwiseClone();
+        }
+
         public void AddQuesToExam(Question q, AnswerList al)
         {
             //default Add() 
