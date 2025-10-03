@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class TrueFalseQues : Question
+    internal class TrueFalseQues : Question , IComparable<TrueFalseQues>
     {
         //e.g: OOP , to define an abstract class we use keyword interface.  (2marks)
         //     true  - false 
@@ -37,6 +37,15 @@ namespace ExamSystem
         {
             return $"(T/F){header}: {body}. ({mark}) ";
         }
+
+        public int CompareTo(TrueFalseQues other) 
+        {
+            //Console.WriteLine("i");
+            if (other == null) return 1;
+            return header.CompareTo(other.header) && body.CompareTo(other.body);   
+
+        }
+
         public override int GetHashCode()
         {
             //return ToString().GetHashCode(); not efficient as it may be change later and change the hasing logic 

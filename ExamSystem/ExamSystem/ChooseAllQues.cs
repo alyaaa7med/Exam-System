@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class ChooseAllQues : Question
+    internal class ChooseAllQues : Question, IComparable<ChooseAllQues>
     {
         //e.g: OOP , what are principles of OOP  (2marks)
         //     polymorphism - threading - abstraction -  virtualization  
@@ -35,6 +35,13 @@ namespace ExamSystem
         {
             get { return anList; }
             set { anList = value; }
+        }
+        public int CompareTo(ChooseAllQues other)
+        {
+            //Console.WriteLine("i");
+            if (other == null) return 1;
+            return header.CompareTo(other.header) && body.CompareTo(other.body);
+
         }
         public override string ToString()
         {

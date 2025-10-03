@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class Answer
+    internal class Answer : IComparable<Answer>
     {
         public string val { get; set; }//true //false //abstraction 
+
+        public int CompareTo(Answer other)
+        {
+            //Console.WriteLine("i");
+            if (other == null) return 1;
+            return val.CompareTo(other.val) ;
+
+        }
     }
 }

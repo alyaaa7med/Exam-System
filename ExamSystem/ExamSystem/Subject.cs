@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    public class Subject
+    public class Subject :IComparable<Subject>
     {
         string nm;
         //List<Student> students;
@@ -17,6 +17,14 @@ namespace ExamSystem
         }
 
         public string NM { get; set; }
+
+        public int CompareTo(Subject other)
+        {
+            //Console.WriteLine("i");
+            if (other == null) return 1;
+            return NM.CompareTo(Subject.NM) ;
+
+        }
 
     }
 }

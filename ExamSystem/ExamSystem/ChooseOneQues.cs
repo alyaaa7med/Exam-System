@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class ChooseOneQues : Question
+    internal class ChooseOneQues : Question, IComparable<ChooseOneQues>
     {
         //e.g: OOP , which key word is used to stop overriden.  (2marks)
         //     virtual - new - override - callback 
@@ -32,6 +32,13 @@ namespace ExamSystem
         {
             get { return anList; }
             set { anList = value; }
+        }
+        public int CompareTo(ChooseOneQues other)
+        {
+            //Console.WriteLine("i");
+            if (other == null) return 1;
+            return header.CompareTo(other.header) && body.CompareTo(other.body);
+
         }
         public override string ToString()
         {

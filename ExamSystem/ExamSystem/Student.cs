@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class Student
+    internal class Student: IComparable <Student>
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -30,7 +30,12 @@ namespace ExamSystem
             }
 
         }
+        public int CompareTo(Student other)
+        {
+            if (other == null) return 1;
+            return Id.CompareTo(other.Id) && Name.CompareTo(other.Name);
 
+        }
         private void OnExamStateChanged(object? sender, ExamEventArgs e)
         {
             Console.WriteLine($"Student {Name}  notified: {e}");

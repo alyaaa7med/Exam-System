@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class FinalExam : Exam
+    internal class FinalExam : Exam , IComparable<FinalExam>
     {
         DateTime examStart, examEnd;
         int durationMinutes = 150;
@@ -37,6 +37,13 @@ namespace ExamSystem
 
             ExamState?.Invoke(this, new ExamEventArgs(ex_mode, sb));
 
+
+        }
+        public int CompareTo(PracitceExam other)
+        {
+            //Console.WriteLine("i");
+            if (other == null) return 1;
+            return examStart.CompareTo(other.examStart);
 
         }
         public void AddQuesToExam(Question q, AnswerList al)
